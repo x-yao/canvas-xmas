@@ -94,7 +94,7 @@ gulp.task('extras', () => {
 
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
-gulp.task('serve', ['styles','babel'], () => {
+gulp.task('serve', ['styles'], () => {
   browserSync({
     notify: false,
     port: 9000,
@@ -114,7 +114,7 @@ gulp.task('serve', ['styles','babel'], () => {
   ]).on('change', reload);
 
   gulp.watch('app/styles/**/*.scss', ['styles']);
-  gulp.watch('app/scripts/**/*.js', ['babel']);
+  // gulp.watch('app/scripts/**/*.js', ['babel']);
   gulp.watch('app/fonts/**/*', ['fonts']);
   gulp.watch('bower.json', ['wiredep', 'fonts']);
 });
