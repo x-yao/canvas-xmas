@@ -1,0 +1,403 @@
+@charset "utf-8";
+html {
+  color: #000;
+  background: #fff;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+    font-size: 20px;
+}
+html * {
+  outline: none;
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body {
+  font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+}
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+}
+input,
+select,
+textarea {
+  font-size: 100%;
+}
+input{
+
+    -webkit-appearance:none;
+}
+input:-ms-clear {
+  display: none;
+
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+fieldset,
+img {
+  border: 0;
+}
+abbr,
+acronym {
+  border: 0;
+  font-variant: normal;
+}
+del {
+  text-decoration: line-through;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+th,
+var {
+  font-style: normal;
+  font-weight: 500;
+}
+ol,
+ul {
+  list-style: none;
+}
+caption,
+th {
+  text-align: left;
+}
+a:hover {
+  text-decoration: none;
+}
+a:active {
+  text-decoration: none;
+}
+ins,
+a {
+  text-decoration: none;
+}
+.hidden {
+  display: none;
+}
+* {
+  text-decoration: none;
+}
+a:hover * {
+  text-decoration: none;
+}
+
+.clearfix:before,.clearfix:after{
+	content:" ";
+	display:table;
+}
+.clearfix:after{
+	clear:both;
+}
+
+/*CSS Reset*/
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+header,
+hgroup,
+nav,
+section,
+article,
+aside,
+footer,
+figure,
+figcaption,
+menu,
+button {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+  line-height: 1.5;
+  font-size: 14px;
+  -webkit-user-select: none;
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0); }
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: normal; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+fieldset,
+img {
+  border: 0; }
+
+li {
+  list-style: none; }
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  border: 0;
+  background: none;
+  -webkit-appearance: none;
+  outline: 0;
+  border-radius: 0; }
+
+a, button, input, select, textarea, a:focus, button:focus, input:focus, select:focus, textarea:focus, [onclick] {
+  outline: 0;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0); }
+
+a {
+  -webkit-touch-callout: none;
+  text-decoration: none;
+  outline: 0; }
+
+em, i {
+  font-style: normal; }
+
+div.hide {
+  display: none; }
+
+body {
+  background-color: #000; }
+
+.ui-center {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .ui-center.ui-center-col {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+
+.container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FFF;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+          background-size: cover;
+  color: #FFF;
+  text-align: center; }
+
+.phone {
+  background: #FFF;
+  width: 100%;
+  height: 38px;
+  text-align: center;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  display: block; }
+
+.verify {
+  background: #FFF;
+  width: 48%;
+  height: 38px;
+  text-align: center;
+  border-radius: 5px;
+  float: left; }
+
+.btn-list {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding: 0 5%;
+  height: 35%; }
+
+.yanzhenma {
+  margin: 5px 0;
+  width: 100%; }
+
+.resend-verify {
+  width: 48%;
+  height: 38px;
+  background: #ff6600;
+  display: inline-block;
+  line-height: 38px;
+  text-align: center;
+  border-radius: 5px;
+  float: right; }
+
+.get-btn, .get-btn {
+  width: 100%;
+  height: 38px;
+  background: #ff6600;
+  display: block;
+  line-height: 38px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 5px; }
+
+.result-fail.on, .result-suc.on {
+  display: block; }
+
+.result-text {
+  color: #f60;
+  font-weight: bold;
+  font-size: 18px; }
+
+#J_verify_filed:after {
+  content: "";
+  display: block;
+  clear: both; }
+
+.didilogo {
+  width: 87px;
+  margin-top: 10px; }
+
+.down-btn {
+  color: #f60;
+  border: 1px solid #f60;
+  width: 90px;
+  display: block;
+  line-height: 26px;
+  margin: 14px auto;
+  text-align: center;
+  height: 26px; }
+  .down-btn img {
+    width: 15px;
+    vertical-align: middle; }
+
+.title-word {
+  color: #ff6600;
+  font-size: 18px;
+  font-weight: bold; }
+
+.act-bottom {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: 36px; }
+
+.act-bottom .btn {
+  display: inline-block;
+  width: 303px;
+  background-color: #f60;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 5px;
+  font-size: 17.5px;
+  color: #fff;
+  font-weight: 700; }
+
+.act-bottom .bottom-wrap {
+  overflow: hidden;
+  width: 310px;
+  margin: 0 auto;
+  height: 132px;
+  background: url(http://img.kuaidadi.com/cms/img/3f0f9cb64f01268e8807257253d6191b.png) no-repeat;
+  -webkit-background-size: 310px auto;
+          background-size: 310px auto; }
+
+.act-bottom1 .btn {
+  margin: 5px 0 0;
+  background: url(http://img.kuaidadi.com/cms/img/fece2d686980b6dc93b9407f83dff77e.png) no-repeat;
+  -webkit-background-size: 277px auto;
+          background-size: 277px auto;
+  width: 277px;
+  height: 47px;
+  line-height: 47px; }
+
+.act-bottom1 .tip {
+  margin-top: 25px;
+  font-size: 15px;
+  line-height: 21px;
+  color: #000;
+  width: 100%;
+  text-align: center; }
+
+.money {
+  font-size: 26px; }
+
+.container .fix-input {
+  padding-top: 50px;
+  height: 100%;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  background: rgba(0, 0, 0, 0.5); }

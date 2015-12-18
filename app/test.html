@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no, shrink-to-fit=no" />
+	<title>Document</title>
+	<link rel="stylesheet" href="styles/test.css">
+</head>
+<body>
+<style>
+	#music1{
+	width:100px;
+    height:100px;
+    background:red;
+}
+#music2{
+	width:100px;
+    height:100px;
+    background:blue;
+}
+#music3{
+	width:100px;
+    height:100px;
+    background:yellow;
+}
+</style>
+<audio id="player" src="http://img.kuaidadi.com/cms/vedio/38ed56b90ca196fa4f522bca60a64b66.mp3" style="display: none;height:0" loop="loop"></audio>
+<audio id="player2" src="http://img.kuaidadi.com/cms/vedio/c6084af00b331d832a2608443e950ad2.mp3" style="display: none;height:0"></audio>
+<div id="result"></div>
+<div id="main"><div id="music1"></div></div>
+<div id="music2"></div>
+<div id="music3"></div>
+<script src="/bower_components/zepto/zepto.js"></script>
+<script src="scripts/test.js"></script>
+<script>
+	$(function(){
+		// $(document).one('touchend',function(e) {
+            
+  //           return false;
+	 //    });
+    $("#music2").on("click",function(){
+    	// $("#player2")[0].touchstart = true;
+        $("#player2")[0].play();
+        $("#player2")[0].pause(); 
+		// $("#player2")[0].currentTime = 0.0; 
+        $("#player")[0].play()
+    })
+    // $("#music1").on("touchstart",function(e){
+    // 	e.preventDefault();
+    // 	$(this).trigger('click')
+    // })
+    $("#music1").on("touchstart",function(e){
+    	e.preventDefault();
+        $("#player2")[0].play()
+    })
+    $("#music1").on("touchend",function(){
+        $("#player2")[0].pause(); 
+		$("#player2")[0].currentTime = 0.0; 
+    })
+})
+</script>
+</body>
+</html>

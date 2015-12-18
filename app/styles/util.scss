@@ -1,0 +1,220 @@
+$global-font-color:#333333;
+$color-green:#22a362;
+$color-number-red:#e85d30;
+%font-medium{
+	font-family: "Helvetica Neue",Helvetica,STHeitiSC-Medium,sans-serif;
+}
+%font-light{
+	font-family: "Helvetica Neue",Helvetica,STHeitiSC-Light,sans-serif;
+}
+%icons{
+	font-family:"iconfont" !important;
+	font-style:normal;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-stroke-width: 0.2px;
+	-moz-osx-font-smoothing: grayscale;
+}
+%overflowtext{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+// 1px hack
+$border-color:#ebebeb;
+$border-radius:3px;
+
+//list
+$list-background-color:#FFF;
+$list-height:52px;
+$lable-font-size:20px;
+$lable-width:52px;
+//这里应对列表元素外部没有边框的情况，默认为有。
+$ulborder:true;
+$list-padding:0;
+@mixin lable-list($list-height:$list-height,$lable-font-size:$lable-font-size,$lable-width:$lable-width,$list-background-color:$list-background-color,$ulborder:$ulborder,$list-padding:$list-padding ){
+	.ui-label-list{
+		background-color:$list-background-color;
+		padding:$list-padding;
+		.ui-list-item{
+			overflow: hidden;
+			height: $list-height;
+		}
+		.list-sigle{
+			line-height: $list-height;
+		}
+		.list-lable{
+			float: left;
+			padding:0 ($lable-width - $lable-font-size)/2;
+			line-height: $list-height;
+			text-align: center;
+			font-size: $lable-font-size;
+		}
+		.list-container{
+			overflow: hidden;
+			height: 100%;
+			box-sizing: border-box;
+		}
+		@if $ulborder {
+			li.ui-list-item:first-child .ui-border-t,li.ui-list-item:last-child .ui-border-b{
+					border: 0;
+			    	background-image: none;
+			}
+		}
+	}
+}
+
+//flex横向等分布局
+$felx-height:80px;
+$felx-item-height:50px;
+%flex{
+	flex:1;
+	display:block;
+	width:0;
+}
+%display-flex{
+	display:flex;
+}
+@mixin flex-box ($border:false,$height:$felx-height,$item-height:""){
+	&.ui-flex{
+		@extend %display-flex;
+		height:$height;
+		.ui-flex-item{
+			@extend %flex;
+			@if $item-height != ""{
+				margin:($height - $item-height)/2 0;
+			}
+		}
+		@if $border != false{
+			div.ui-flex-item.ui-border-l:first-child,div.ui-flex-item.ui-border-r:last-child {
+				border: 0;
+				background-image: none;
+			}
+		}
+	}
+}
+
+//按钮
+// 背景颜色、字体，高度，圆角，文字颜色，对齐
+@mixin btn ($bgc:$color-green,$fz:16px,$height:50px,$br:$border-radius,$color:#FFF,$align:center){
+	background: $bgc;
+	text-align: $align;
+	font-size: $fz;
+	color: $color;
+	height: $height;
+	line-height: $height;
+	border-radius: $border-radius;
+}
+
+//icons
+
+%icon-calen{
+	content: "\e628";
+}
+
+//empty
+%empty-common{
+	text-align: center;
+	font-family:"iconfont" !important;
+	font-style:normal;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-stroke-width: 0.2px;
+	-moz-osx-font-smoothing: grayscale;
+}
+@mixin empty-b($content:"",$margin:0,$fontsize:16px,$color:#000){
+	&:empty{
+		@extend %empty-common;
+		&:before{
+			display: block;
+			margin: $margin;
+			font-size: $fontsize;
+			color:$color;
+			content: $content;
+		}
+
+	}
+
+}
+@mixin empty-a($content:"",$margin:0,$fontsize:16px,$color:#000){
+	&:empty{
+		@extend %empty-common;
+		&:after{
+			display: block;
+			margin: $margin;
+			font-size: $fontsize;
+			color:$color;
+			content: $content;
+		}
+
+	}
+
+}
+
+@mixin queryWidth( $min , $max ,$rem:50px){
+    @if $min == -1{
+        @media screen and ( max-width: $max+px ) {
+            html{
+                font-size: ( ($max+1) / 375 ) * $rem;
+            }
+        }
+    } @else if $max == -1{
+        @media screen and ( min-width: $min+px ) {
+            html{
+                font-size: ( $min / 375 ) * $rem;
+            }
+        }
+    } @else{
+        @media screen and ( min-width: $min+px ) and ( max-width: $max+px ) {
+            html{
+                font-size: ( $min / 375 ) * $rem;
+            }
+        }
+    }
+}
+
+@mixin rem{
+	@include queryWidth(-1,319);
+	@include queryWidth(320,359);
+	@include queryWidth(360,374);
+	@include queryWidth(375,383);
+	@include queryWidth(384,399);
+	@include queryWidth(400,413);
+	@include queryWidth(414,-1);
+}
+
+@mixin border-r($r:8px,$c:$border-color){
+	.ui-border-radius {
+	  border: 1px solid $c;
+	  border-radius: $r/2; 
+	}
+	@media screen and (-webkit-min-device-pixel-ratio: 2) {
+		.ui-border-radius {
+		  position: relative;
+		  border: 0; 
+		}
+		.ui-border-radius:before {
+			content: "";
+			width: 200%;
+			height: 200%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			border: 1px solid $c;
+			-webkit-transform: scale(0.5);
+			-webkit-transform-origin: 0 0;
+			padding: 1px;
+			-webkit-box-sizing: border-box;
+			border-radius: $r;
+			pointer-events: none;
+		 } 
+	}
+}
+
+
+
+
+
+
+
+
+
+
