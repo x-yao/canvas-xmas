@@ -4,5 +4,24 @@
 @import 'util';
 @include rem;
 #myCanvas{
-  width: 320px;
+  width: 7.5rem;
+}
+#pic{
+  opacity: 0;
+  height: 1rem;
+  z-index: 10;
+}
+#btn1,#pic{
+  position: absolute;
+  left: 0.5rem;
+  bottom: 1rem;
+  width: 3.49rem;
+}
+.isok{
+  position: absolute;
+  display: none;
+  width: 50px;
+  height: 50px;
+  background: #F00;
+  bottom: 0;
 }
